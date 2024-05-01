@@ -1,0 +1,47 @@
+﻿@using m12SystemsPortfolio.Client.Models
+@rendermode InteractiveWebAssembly
+
+<MudCard Style="border-block:solid; border-block-color:blue ">
+    <MudCardContent>
+        <span class="span-workitem-hdr">@WRKItem.Id - @WRKItem.Project</span><br/>
+        <span class="span-workitem">@WRKItem.Description</span><br />
+        <span class="span-workitem">Start Date:@WRKItem.StartDate to EndDate:@WRKItem.EndDate </span><br />
+        <MudCheckBox Label="Active" Value="@WRKItem.Active" Disabled="true" />
+    </MudCardContent>
+</MudCard>
+
+@code {
+    private WorkItem _WrkItem;
+
+    [Parameter]
+    public WorkItem WRKItem   // property
+    {
+        get { return _WrkItem; }
+        set { _WrkItem = value; }
+    }
+
+
+ public WorkItemComponent()
+ {
+        _WrkItem = new WorkItem
+        {
+            Id = 1,
+            Project = "Unknown",
+            StartDate = DateOnly.FromDateTime(DateTime.Now),
+            EndDate = DateOnly.FromDateTime(DateTime.Now),
+            Description = "",
+            Active = false
+        };
+ }
+
+}
+<style>
+    .span-workitem-hdr {
+        color: black;
+        background-color: teal;
+    }
+
+    .span-workitem {
+        color: var(--mud-palette-primary) !important;
+    }
+</style>

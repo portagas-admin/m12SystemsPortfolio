@@ -1,0 +1,32 @@
+﻿@page "/workhistory"
+@rendermode InteractiveWebAssembly
+@using m12SystemsPortfolio.Client.Components
+@using m12SystemsPortfolio.Client.Models;
+
+<h3>WorkHistory</h3>
+@foreach (var salesOrderLine in _WorkHistory)
+  {
+    <WorkItemComponent WrkItem=@salesOrderLine />
+    <br/>
+  }
+
+@code {
+    protected List<WorkItem> _WorkHistory = new List<WorkItem>();
+
+    public WorkHistory()
+    {
+        _WorkHistory.Add(new m12SystemsPortfolio.Client.Models.WorkItem
+            {
+                Id = 1,
+                Project = "M12 Systems R&D",
+                StartDate = DateOnly.FromDateTime(DateTime.Now),
+                EndDate = DateOnly.FromDateTime(DateTime.Now),
+                Description = ".Net Development and Reasearch",
+                Active = true
+            });
+
+        _WorkHistory.Add(new m12SystemsPortfolio.Client.Models.WorkItem { Id = 2, Project = "EY/Hexaware Technologies", StartDate = DateOnly.FromDateTime(DateTime.Now),
+                EndDate = DateOnly.FromDateTime(DateTime.Now), Description = "Description 1", Active = false });
+    }
+
+}

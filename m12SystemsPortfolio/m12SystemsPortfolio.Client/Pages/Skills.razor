@@ -1,0 +1,32 @@
+﻿@page "/skills"
+@using m12SystemsPortfolio.Client.Components
+@using m12SystemsPortfolio.Client.Models
+@rendermode InteractiveWebAssembly
+
+<h3>Skills</h3>
+@foreach (var salesOrderLine in _WorkHistory)
+  {
+    <SkillItemComponent WrkItem=@salesOrderLine />
+    <br/>
+  }
+
+@code {
+    protected List<SkillItem> _WorkHistory = new List<SkillItem>();
+
+    public Skills()
+    {
+        _WorkHistory.Add(new m12SystemsPortfolio.Client.Models.SkillItem
+            {
+                Id = 1,
+                Skill = "Angular (Ng)",
+                Description = "From Version 2 to 16, Learning 17",      
+            });
+
+        _WorkHistory.Add(new m12SystemsPortfolio.Client.Models.SkillItem
+            {
+                Id = 2,
+                Skill = "Microsoft Blazor",
+                Description = "From Version 3 to 8",
+            });
+    }
+}

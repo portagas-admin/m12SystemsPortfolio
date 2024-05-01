@@ -1,0 +1,45 @@
+﻿@using m12SystemsPortfolio.Client.Models
+@rendermode InteractiveWebAssembly
+
+<MudCard Style="border-block:solid; border-block-color:lightblue ">
+    <MudCardContent>
+        <span class="span-workitem-hdr">@WRKItem.Id - @WRKItem.Skill</span><br/>
+        <span class="span-workitem">@WRKItem.Description</span><br />
+      
+    </MudCardContent>
+</MudCard>
+
+@code {
+    private SkillItem _WrkItem;
+
+    [Parameter]
+    public SkillItem WRKItem   // property
+    {
+        get { return _WrkItem; }
+        set { _WrkItem = value; }
+    }
+
+
+ public SkillItemComponent()
+ {
+        _WrkItem = new SkillItem
+        {
+            Id = 1,
+            Skill = "Unknown",
+            
+            Description = ""
+            
+        };
+ }
+
+}
+<style>
+    .span-workitem-hdr {
+        color: black;
+        background-color: teal;
+    }
+
+    .span-workitem {
+        color: var(--mud-palette-primary) !important;
+    }
+</style>
