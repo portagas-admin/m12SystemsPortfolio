@@ -1,7 +1,7 @@
 ﻿@using m12SystemsPortfolio.Client.Models
 @rendermode InteractiveWebAssembly
 
-<MudCard Style="border-block:solid; border-block-color:blue ">
+<MudCard Style="border-block:solid; border-block-color:aqua ">
     <MudCardContent>
         <span class="span-workitem-hdr">@WRKItem.Id - @WRKItem.Project</span><br/>
         <span class="span-workitem">@WRKItem.Description</span><br />
@@ -38,10 +38,11 @@
 <style>
     .span-workitem-hdr {
         color: black;
-        background-color: teal;
+        background-color: aqua;
     }
 
     .span-workitem {
         color: var(--mud-palette-primary) !important;
     }
 </style>
+

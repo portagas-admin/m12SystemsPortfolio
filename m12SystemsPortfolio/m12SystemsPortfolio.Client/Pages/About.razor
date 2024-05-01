@@ -1,7 +1,28 @@
 ﻿@page "/about"
 @rendermode InteractiveWebAssembly
+
 <h3>About</h3>
+<MudTabs Outlined="true" Position="@Position" Rounded="true" Border="true"
+         ApplyEffectsToContainer="true" Class="mt-8" PanelClass="pa-6">
+    <MudTabPanel Text="About Michael">
+        <MudText>I am a .NET Full Stack Developer with over 20 yrs experience.</MudText><br/>
+        <MudText>My Primary Skills are as follows:</MudText><br />
+        <MudText>FontEnd: Angular, Blazor, MVC and now React</MudText><br />
+        <MudText>MiddleTier: WebApi and EntityFramework</MudText><br />
+        <MudText>BackEnd: MSSQL, MongoDB and now CosmosDB</MudText><br />
+    </MudTabPanel>
+    <MudTabPanel Text="About M12 Systems R&D">
+        <MudText>From time to time, I subcontract under M12 Systems R&D</MudText><br />
+        <MudText>I specialize in .NET FullStack Development</MudText><br />
+        <MudText>I also Technology POC and Research</MudText><br />
+    </MudTabPanel>
+    <MudTabPanel Text="Contact">
+        <MudText>Primary Email: mikew194@protonmail.com</MudText><br />
+        <MudText>Secondary Email: michael.wassermann@m12systems.com</MudText><br />
+        <MudText>Phone: (504)418-7834</MudText><br />
+    </MudTabPanel>
+</MudTabs>
 
 @code {
-
+    public Position Position { get; set; } = Position.Top;
 }
