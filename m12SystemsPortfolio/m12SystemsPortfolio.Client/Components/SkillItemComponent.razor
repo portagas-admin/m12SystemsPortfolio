@@ -1,10 +1,10 @@
 ﻿@using m12SystemsPortfolio.Client.Models
 @rendermode InteractiveWebAssembly
 
-<MudCard Style="border-block:solid; border-block-color:lightblue ">
+<MudCard Style="border-block:solid; border-block-color:aqua ">
     <MudCardContent>
         <span class="span-workitem-hdr">@WRKItem.Id - @WRKItem.Skill</span><br/>
-        <span class="span-workitem">@WRKItem.Description</span><br />
+        <MudTextField T="string" Label="Multiline" Variant="Variant.Text" Text="@WRKItem.Description" Lines="5" />
       
     </MudCardContent>
 </MudCard>
@@ -36,7 +36,7 @@
 <style>
     .span-workitem-hdr {
         color: black;
-        background-color: teal;
+        background-color: aqua;
     }
 
     .span-workitem {
